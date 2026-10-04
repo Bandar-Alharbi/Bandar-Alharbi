@@ -40,7 +40,7 @@ function start() {
   renderer.setClearColor(0x000000, 0);
 
   const scene = new THREE.Scene();
-  scene.fog = new THREE.Fog(0x0c0e13, 7.5, 17);          // far parts of the lines fade into the dark background
+  scene.fog = new THREE.Fog(0x000000, 7.5, 17);          // far parts of the lines fade into the dark background
   const camera = new THREE.PerspectiveCamera(40, 1, .1, 60);
   camera.position.set(0, 0, 9);
 
