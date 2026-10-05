@@ -5,50 +5,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Bandar Alharbi — Business Administration</title>
 <meta name="description" content="Bandar Alharbi, Business Administration graduate from Taif University, Saudi Arabia. Interested in business analysis, project coordination, process improvement and operations.">
-<meta name="theme-color" content="#1b1c1e">
-<meta name="color-scheme" content="dark">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Bandar Alharbi — Business Administration">
-<meta property="og:description" content="Business Administration graduate from Taif University, Saudi Arabia.">
-<link rel="icon" href="favicon.svg?v=1" type="image/svg+xml">
-<!-- fonts are stored in /fonts, so the site doesn't depend on an outside font service -->
-<link rel="preload" href="fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet">
+<link rel="preload" href="hero.svg?v=2" as="image" type="image/svg+xml">
 <!-- bump ?v= after editing a file so browsers load the new copy instead of an old cached one -->
-<link rel="stylesheet" href="site.css?v=30">
-<script src="profile.js?v=6"></script>
-<script src="site.js?v=20" defer></script>
+<link rel="stylesheet" href="site.css?v=23">
+<script src="profile.js?v=5"></script>
+<!-- Lenis: eased mouse-wheel scrolling (touch scrolling stays native) -->
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js" defer></script>
+<script src="site.js?v=8" defer></script>
+<!-- 3D front image (three.js); if it can't run, the flat image stays -->
+<script type="module" src="hero3d.js?v=18"></script>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-
-<header class="top" id="top">
-  <div class="wrap top-in">
-    <a class="top-name" href="#home" data-p="name">Bandar Alharbi</a>
-    <nav class="top-nav" aria-label="Sections">
-      <ul class="top-links" data-nav></ul>
-      <button type="button" class="menu-btn" aria-expanded="false" aria-controls="sheet">Menu</button>
-    </nav>
-  </div>
-  <div class="sheet" id="sheet" hidden>
-    <ul class="wrap sheet-links" data-sheet></ul>
+<header class="site-top">
+  <div class="wrap topbar">
+    <a class="who" href="#home"><b data-p="name"></b><span data-p="tagline"></span></a>
+    <nav class="top-links" data-nav aria-label="Sections"></nav>
   </div>
 </header>
 
-<main id="main">
-  <section class="hero" id="home" aria-labelledby="home-title">
-    <div class="wrap hero-in" id="homeContent"></div>
+<main>
+  <section class="home" id="home" aria-labelledby="home-title">
+    <div class="home-bg" aria-hidden="true"></div>
+    <div class="wrap home-in" id="homeContent"></div>
   </section>
-  <div id="chapters"></div>
+  <div class="sections" id="sections"></div>
 </main>
 
-<footer class="foot" id="foot"></footer>
-
-<noscript>
-  <div class="wrap noscript">
-    <h1>Bandar Alharbi</h1>
-    <p>Business Administration graduate, Taif University, Saudi Arabia.</p>
-    <p><a href="mailto:bandar.worksa@gmail.com">bandar.worksa@gmail.com</a> · <a href="https://www.linkedin.com/in/bandar-alharbi-sa">LinkedIn</a> · <a href="cv.html">CV</a></p>
-  </div>
-</noscript>
+<footer class="sections foot" id="foot"></footer>
 </body>
 </html>
