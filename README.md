@@ -2,14 +2,18 @@
 
 Personal portfolio of Bandar Alharbi, Business Administration graduate from Taif University, Saudi Arabia.
 
-A single-page website: Home, About, Experience, Projects, Skills & Certifications, and Contact.
+A single page that reads from top to bottom: Introduction, Background (about, experience, education and certifications), Projects, Skills and Contact. The CV opens on its own page (`cv.html`), which shows the PDF on screen and also offers "Open PDF" and "Download PDF".
 
 ## Updating the content
 
-All personal information (bio, experience, education, certifications, skills, contact links) lives in one file:
+All personal information (bio, experience, education, certifications, skills, projects, contact links) lives in one file:
 **`profile.js`**. Edit it and the whole site updates.
 
-After editing a file, bump its `?v=` number in `index.html` so browsers load the new version.
+- **Projects:** fill in `title`, `description` and (optionally) `link` for an item. Items without a title show as "Coming soon."
+- **Certifications:** paste a verification URL into `link` to show a "View credential" link.
+- **CV:** replace `cv.pdf` with a new file of the same name.
+
+After editing a file, bump its `?v=` number in `index.html` (and `cv.html`) so browsers load the new version.
 
 ## Files
 
@@ -17,11 +21,11 @@ After editing a file, bump its `?v=` number in `index.html` so browsers load the
 |---|---|
 | `index.html` | The page |
 | `profile.js` | All personal content |
-| `site.css` | Styles |
-| `site.js` | Sections, navigation, scrolling and interactions |
-| `hero3d.js` | The 3D light strands on the first screen (three.js) |
-| `hero.svg` | Flat version of the first-screen image (used if 3D is unavailable) |
-| `flow.svg` | Background pattern for the sections |
+| `site.css` | Styles for both pages (colors and fonts are set at the top) |
+| `site.js` | Builds the sections from `profile.js`; menu and scrolling |
+| `cv.html`, `cv.js` | The CV page (shows `cv.pdf` with pdf.js) |
 | `cv.pdf` | CV |
+| `fonts/` | Bricolage Grotesque and Newsreader (SIL Open Font License) |
+| `favicon.svg` | Browser tab icon |
 
-No build step: the site is plain HTML, CSS and JavaScript, ready for GitHub Pages.
+No build step: the site is plain HTML, CSS and JavaScript, ready for GitHub Pages. All paths are relative, so it works at `bandar-alharbi.github.io/Bandar-Alharbi/`.
