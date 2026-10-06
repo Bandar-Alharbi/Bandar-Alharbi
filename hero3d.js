@@ -11,7 +11,7 @@ const finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
 
 // the line paths traced from the original image (image pixels; x = 0, 30, … 630), same data as hero.svg
 const XS = Array.from({ length: 22 }, (_, i) => i * 30);
-const WHITE = 0xffffff, BLUE = 0x3a6ff0, GREEN = 0x62d66c;
+const WHITE = 0xd6dfeb, BLUE = 0x5f8fd0, GREEN = 0xe3a462; // silver, steel blue, amber (from the reference photo)
 const LINES = [
   [WHITE, [448, 468, 483, 494, 500, 503, 503, 504, 508, 514, 523, 536, 554, 574, 594, 611, 625, 637, 646, 652, 657, 662], 1.6],
   [BLUE,  [518, 531, 543, 555, 567, 576, 585, 595, 603, 611, 618, 624, 630, 636, 641, 645, 649, 653, 656, 659, 661, 664], -1.2],
@@ -40,7 +40,7 @@ function start() {
   renderer.setClearColor(0x000000, 0);
 
   const scene = new THREE.Scene();
-  scene.fog = new THREE.Fog(0x000000, 7.5, 17);          // far parts of the lines fade into the dark background
+  scene.fog = new THREE.Fog(0x061430, 7.5, 17);          // far parts of the lines fade into the dark background
   const camera = new THREE.PerspectiveCamera(40, 1, .1, 60);
   camera.position.set(0, 0, 9);
 
@@ -55,7 +55,7 @@ function start() {
      the strand. (Drawn in the strand's shader, so it has the strand's exact shape — no round dots.) */
   const N = LINES.length;
   const GLSL_LIGHT = `
-    const vec3 LIGHT_COL = vec3(.9, 1.0, 1.0);
+    const vec3 LIGHT_COL = vec3(1.0, .93, .82);
     // brightness at distance fd along a line, for a light at hd moving in direction dir (+1 / -1)
     float lightAt(float fd, float hd, float dir) {
       float delta = (hd - fd) * dir;                          // > 0: behind the light (its tail)
@@ -122,14 +122,14 @@ function start() {
   tilt.add(new THREE.Mesh(new THREE.TubeGeometry(lead, 64, .0135, 6, false), leadMaterial(false)));
   tilt.add(new THREE.Mesh(new THREE.TubeGeometry(lead, 64, .034, 8, false), leadMaterial(true)));
   const dotPos = toWorld(...DOT);
-  const orb = new THREE.Mesh(new THREE.SphereGeometry(.1, 32, 16), new THREE.MeshBasicMaterial({ color: 0xfdfffe }));
+  const orb = new THREE.Mesh(new THREE.SphereGeometry(.1, 32, 16), new THREE.MeshBasicMaterial({ color: 0xfff1df }));
   orb.position.copy(dotPos);
   tilt.add(orb);
 
   const glowTex = (() => {
     const c = document.createElement('canvas'); c.width = c.height = 128;
     const g = c.getContext('2d'), grd = g.createRadialGradient(64, 64, 0, 64, 64, 64);
-    grd.addColorStop(0, 'rgba(255,255,255,.9)'); grd.addColorStop(.25, 'rgba(200,220,255,.35)'); grd.addColorStop(1, 'rgba(160,190,255,0)');
+    grd.addColorStop(0, 'rgba(255,255,255,.9)'); grd.addColorStop(.25, 'rgba(240,200,150,.35)'); grd.addColorStop(1, 'rgba(227,164,98,0)');
     g.fillStyle = grd; g.fillRect(0, 0, 128, 128);
     return new THREE.CanvasTexture(c);
   })();
