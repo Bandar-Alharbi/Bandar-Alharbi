@@ -12,6 +12,7 @@ All personal information (bio, experience, education, certifications, skills, pr
 - **Projects:** fill in `title`, `description` and (optionally) `link` for an item. Items without a title show as "Coming soon."
 - **Certifications:** paste a verification URL into `link` to show a "View credential" link.
 - **CV:** replace `cv.pdf` with a new file of the same name.
+- **First-screen photo:** replace the files in `images/` (keep the same names), or change the `<picture>` in `index.html`.
 
 After editing a file, bump its `?v=` number in `index.html` (and `cv.html`) so browsers load the new version.
 
@@ -26,6 +27,7 @@ After editing a file, bump its `?v=` number in `index.html` (and `cv.html`) so b
 | `cv.html`, `cv.js` | The CV page (shows `cv.pdf` with pdf.js) |
 | `cv.pdf` | CV |
 | `fonts/` | Bricolage Grotesque and Newsreader (SIL Open Font License) |
+| `images/` | The building photograph on the first screen (WebP in three sizes, plus a JPEG fallback) |
 | `favicon.svg` | Browser tab icon |
 
 No build step: the site is plain HTML, CSS and JavaScript, ready for GitHub Pages. All paths are relative, so it works at `bandar-alharbi.github.io/Bandar-Alharbi/`.

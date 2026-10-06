@@ -33,12 +33,10 @@
   /* ---------- 1. introduction ---------- */
   const nameParts = String(P.name || '').trim().split(/\s+/);
   const nameHTML = nameParts.map((w, i) => `<span class="line l${i + 1}"><span>${esc(w)}</span></span>`).join('');
-  const heroFacts = [P.degreeShort, ...list(P.languages).map(l => `${l.name}, ${l.level.toLowerCase()}`)].filter(Boolean);
   $('homeContent').innerHTML =
     `<p class="hero-status"><span class="dot" aria-hidden="true"></span>${esc(P.status)}<span class="sep" aria-hidden="true"></span>${esc(P.location)}</p>
      <h1 class="hero-name" id="home-title">${nameHTML}</h1>
      <div class="hero-foot">
-       ${heroFacts.length ? `<ul class="hero-facts" aria-label="Quick facts">${heroFacts.map(f => `<li>${esc(f)}</li>`).join('')}</ul>` : ''}
        <div class="hero-say">
          <p class="hero-headline">${esc(P.headline)}</p>
          ${P.summary ? `<p class="hero-sum">${esc(P.summary)}</p>` : ''}
