@@ -1,8 +1,8 @@
 /* ================================================================
    EDIT YOUR DETAILS HERE
-   Every part of the page reads its content from this one object:
-   Introduction, Background (about, experience, education), Projects,
-   Skills and Contact. Leave a list empty ([]) to hide it.
+   Every section of the page (Home, About, Experience, Projects,
+   Skills & Certifications, Contact) reads its content from this one object.
+   Leave a list empty ([]) to hide it.
    ================================================================ */
 window.PROFILE = {
   name: 'Bandar Alharbi',
@@ -110,19 +110,18 @@ window.PROFILE = {
   links: {
     email: 'bandar.worksa@gmail.com',
     linkedin: 'https://www.linkedin.com/in/bandar-alharbi-sa',
-    cv: 'cv.pdf',        // the CV file itself
-    cvPage: 'cv.html',   // the page that shows the CV ("View CV" links open this)
+    cv: 'cv.pdf',
   },
 
   copyright: '© 2026 Bandar Alharbi. All rights reserved.',
 
-  /* Page sections, in scroll order. `label` is the menu text.
-     "background" combines About, Experience and Education. */
+  /* Page sections, in scroll order. `label` is the menu text, `title` (optional) the section's full name. */
   sections: [
-    { id: 'home', label: 'Introduction' },
-    { id: 'background', label: 'Background' },
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About' },
+    { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
-    { id: 'skills', label: 'Skills' },
+    { id: 'skills', label: 'Skills', title: 'Skills & Certifications' },
     { id: 'contact', label: 'Contact' },
   ],
 };
