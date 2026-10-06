@@ -20,7 +20,8 @@ After editing a file, bump its `?v=` number in `index.html` so browsers load the
 | `site.css` | Styles |
 | `site.js` | Sections, navigation, scrolling and interactions |
 | `hero3d.js` | The 3D light strands on the first screen (three.js) |
-| `hero.svg` | Flat version of the first-screen image (used if 3D is unavailable) |
+| `images/facade.webp` | Background photo of the first screen (navy glass facade) |
+| `hero.svg` | Flat version of the light strands (used over the photo if 3D is unavailable) |
 | `flow.svg` | Background pattern for the sections |
 | `cv.pdf` | CV |
 
